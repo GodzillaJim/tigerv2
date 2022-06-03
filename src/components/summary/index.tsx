@@ -27,9 +27,9 @@ export const SummaryPane = () => {
     }
   };
   return (
-    <Grid container direction="column">
+    <Grid sx={{ backgroundColor: "#222" }} container direction="column">
       <Grid item>
-        <Divider />
+        <Divider color="" />
       </Grid>
       <Grid item>
         <Card>
@@ -49,13 +49,13 @@ export const SummaryPane = () => {
               </Grid>
               <Grid item>
                 <Grid container justifyContent="center" direction="column">
-                  <Grid item>
-                    <Typography textAlign={"center"} variant="h6">
+                  <Grid sx={{ textAlign: "center" }} item>
+                    <Typography textAlign={"center"} variant="body2">
                       {infor.name}
                     </Typography>
                   </Grid>
-                  <Grid item>
-                    <Typography textAlign={"center"} variant="body1">
+                  <Grid sx={{ textAlign: "center" }} item>
+                    <Typography textAlign={"center"} variant="caption">
                       {infor.profession}
                     </Typography>
                   </Grid>
@@ -105,7 +105,7 @@ export const SummaryPane = () => {
           <Grid sx={{ width: "100%" }} justifyContent="center" item>
             <Card>
               <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-                <Button onClick={handleDownloadResume} color="warning" variant="contained">
+                <Button sx={{ padding: "10px" }} onClick={handleDownloadResume} color="warning" variant="contained">
                   <Typography className="text-dark text-center" variant="caption">
                     Download CV
                   </Typography>

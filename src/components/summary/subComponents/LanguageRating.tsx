@@ -25,7 +25,7 @@ const LanguageRating = (props: ILanguageRating) => {
         />
       </Grid>
       <Grid item>
-        <Typography variant="subtitle1" className="text-center text-light">
+        <Typography variant="caption" className="text-center text-light">
           {label}
         </Typography>
       </Grid>

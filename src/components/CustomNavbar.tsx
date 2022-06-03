@@ -15,7 +15,7 @@ export const CustomNavbar = (props: ICustomNavbar) => {
   return (
     <div>
       <Slide appear={false} direction="down" in={!trigger}>
-        <AppBar color="transparent">
+        <AppBar sx={{ backgroundColor: "#222" }}>
           <Toolbar>
             <Grid justifyContent={"space-between"} container direction="row">
               <Grid item>

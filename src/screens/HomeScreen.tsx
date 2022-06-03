@@ -42,7 +42,7 @@ export const HomeScreen = () => {
       <Helmet>
         <title>{infor.homePageTitle}</title>
       </Helmet>
-      <Grid spacing={1} direction="column" container>
+      <Grid sx={{ backgroundColor: "#222" }} spacing={1} direction="column" container>
         <Grid item>
           <CustomNavbar
             menuIsOpen={menuIsOpen}
@@ -52,15 +52,7 @@ export const HomeScreen = () => {
           />
         </Grid>
         <Grid sx={{ mt: 7 }} item>
-          <Grid
-            style={{ height: "100vh" }}
-            bgcolor={"Background.primary"}
-            flexGrow={1}
-            container
-            direction="row"
-            columns={12}
-            justifyContent="center"
-          >
+          <Grid bgcolor={"transparent"} container direction="row" columns={12} justifyContent="center">
             {summaryIsOpen && (
               <Grid
                 style={{ backgroundColor: "InfoBackground" }}
