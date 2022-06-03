@@ -1,8 +1,9 @@
-import { Collapse, Grid, Slide, Typography } from "@mui/material";
+import { Grid, Slide, Typography } from "@mui/material";
 import React, { useMemo, useState } from "react";
 
 import { CustomNavbar } from "../components/CustomNavbar";
 import { Helmet } from "react-helmet";
+import { SummaryPane } from "../components/summary";
 import { infor } from "../data/data";
 
 export const HomeScreen = () => {
@@ -41,7 +42,7 @@ export const HomeScreen = () => {
       <Helmet>
         <title>{infor.homePageTitle}</title>
       </Helmet>
-      <Grid gap={1} direction="column" container>
+      <Grid spacing={1} direction="column" container>
         <Grid item>
           <CustomNavbar
             menuIsOpen={menuIsOpen}
@@ -70,7 +71,9 @@ export const HomeScreen = () => {
                 md={summaryPaneSize}
               >
                 <Slide in={summaryIsOpen} direction="right">
-                  <Typography>Summary</Typography>
+                  <div>
+                    <SummaryPane />
+                  </div>
                 </Slide>
               </Grid>
             )}
