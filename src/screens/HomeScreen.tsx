@@ -51,7 +51,7 @@ export const HomeScreen = () => {
             setMenuIsOpen={() => setMenuIsOpen(!menuIsOpen)}
           />
         </Grid>
-        <Grid item>
+        <Grid sx={{ mt: 7 }} item>
           <Grid
             style={{ height: "100vh" }}
             bgcolor={"Background.primary"}
