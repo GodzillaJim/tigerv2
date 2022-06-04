@@ -17,6 +17,14 @@ const options: ThemeOptions = {
       primary: "#adb5bd",
       secondary: "#fff",
     },
+    warning: {
+      main: "#f39c12",
+      light: "#f39c69",
+      dark: "##F25811",
+    },
+  },
+  typography: {
+    fontFamily: "Lucida Sans",
   },
 };
 

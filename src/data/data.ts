@@ -19,4 +19,7 @@ export const infor = {
     { name: "GitHub", link: "https://github.com/godzillajim" },
     { name: "Twitter", link: "https://twitter.com/jimnam99" },
   ],
+  briefPortfolio: [
+    { label: "Years of Experience", value:"3+"}, { label: "Delivered Projects", value:"10+"}, { label: "Partnerships", value: "20+"}
+  ]
 };
