@@ -1,7 +1,8 @@
-import { Grid, Slide, Typography } from "@mui/material";
+import { Grid, Slide } from "@mui/material";
 import React, { useMemo, useState } from "react";
 
 import ContentPane from "../components/content/ContentPane";
+import { CustomMenu } from "../components/summary/menu";
 import { CustomNavbar } from "../components/CustomNavbar";
 import { Helmet } from "react-helmet";
 import { SummaryPane } from "../components/summary";
@@ -106,7 +107,9 @@ export const HomeScreen = () => {
                 md={menuPaneSize}
               >
                 <Slide in={menuIsOpen} direction="left">
-                  <Typography>Menu</Typography>
+                  <div>
+                    <CustomMenu />
+                  </div>
                 </Slide>
               </Grid>
             )}

@@ -20,6 +20,13 @@ export const infor = {
     { name: "Twitter", link: "https://twitter.com/jimnam99" },
   ],
   briefPortfolio: [
-    { label: "Years of Experience", value:"3+"}, { label: "Delivered Projects", value:"10+"}, { label: "Partnerships", value: "20+"}
-  ]
+    { label: "Years of Experience", value: "3+" },
+    { label: "Delivered Projects", value: "10+" },
+    { label: "Partnerships", value: "20+" },
+  ],
+  menu: [
+    { name: "Home", link: "#home" },
+    { name: "Blog", link: "#blog" },
+    { name: "Portfolio", link: "#portfolio" },
+  ],
 };
