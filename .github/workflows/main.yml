@@ -1,29 +1,40 @@
-name: github-to-surge
+name: github-cicd
+# Controlling when the action runs
+# Setting action only for the master branch
 on:
-    push:
-      branches: [ master ]
-    pull_request: 
-      branches: [ master ]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# Setting up the jobs
 jobs:
-  build: 
+  build:
+    # Environment
     runs-on: ubuntu-latest
+    # Tasks
     steps:
+      # Check out repo under $GITHUB_WORKSPACE
       - name: action checkout
         uses: actions/checkout@v3
 
+      # Now run commands
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: v16.4.0
+          node-version: 16
+
       - name: Install Yarn
         uses: borales/actions-yarn@v2.3.0
         with:
+          #Running yarn install
           cmd: install
+
       - name: Build App
         run: yarn build
 
-      - name: Install surge
+      - name: Install Surge
         run: npm install --global surge
-      
-      - name: Deploy to surge
+
+      - name: Deploy to Surge
         run: surge ./build jimna.surge.sh --token ${{secrets.SURGE_TOKEN}}
