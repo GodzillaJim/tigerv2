@@ -21,9 +21,9 @@ export const ProjectCard = (props: IProjectCard) => {
   return (
     <Grid container>
       <Grid item>
-        <Card>
-          <CardMedia sx={{ height: 300 }} image={image} />
-          <CardContent>
+        <Card sx={{ backgroundColor: "#333333eb" }}>
+          <CardMedia sx={{ height: 200 }} image={image} />
+          <CardContent sx={{ overflow: "hidden", minHeight: "290px", height: "290px" }}>
             <Grid container direction="column">
               <Grid item>
                 <Typography variant="h5">{name.toUpperCase()}</Typography>
@@ -40,8 +40,8 @@ export const ProjectCard = (props: IProjectCard) => {
                 </Grid>
               </Grid>
               <Grid item>
-                {summary.substring(0, 300) + "..."}
-                {summary.length > 300 && <Button onClick={handleReadMore}>Read More</Button>}
+                {summary.substring(0, 200) + "..."}
+                {<Button onClick={handleReadMore}>Read More</Button>}
               </Grid>
             </Grid>
           </CardContent>
