@@ -32,7 +32,7 @@ const ContentPane = () => {
                       &lt;<i style={{ color: "#f39c12" }}>code</i>&gt;
                     </Typography>
                   </Grid>
-                  <Grid columns={3} item>
+                  <Grid sx={{ height: "56px" }} columns={3} item>
                     <Typography textAlign="center" variant="h6">
                       <Typewriter
                         onInit={(typewriter) => {

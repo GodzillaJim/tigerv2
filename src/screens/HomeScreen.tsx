@@ -5,6 +5,7 @@ import ContentPane from "../components/content/ContentPane";
 import { CustomMenu } from "../components/summary/menu";
 import { CustomNavbar } from "../components/CustomNavbar";
 import { Helmet } from "react-helmet";
+import { Portfolio } from "../components/projects";
 import { SummaryPane } from "../components/summary";
 import { infor } from "../data/data";
 
@@ -94,7 +95,14 @@ export const HomeScreen = () => {
               md={contentPaneSize}
               lg={contentPaneSizeLg}
             >
-              <ContentPane />
+              <Grid spacing={3} container direction="column">
+                <Grid item>
+                  <ContentPane />
+                </Grid>
+                <Grid item>
+                  <Portfolio />
+                </Grid>
+              </Grid>
             </Grid>
 
             {menuIsOpen && (
