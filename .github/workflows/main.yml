@@ -22,16 +22,14 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: v16.3.0
 
-      - name: Install Yarn
-        uses: borales/actions-yarn@v2.0.0
+      - uses: borales/actions-yarn@v3.0.0
         with:
-          #Running yarn install
-          cmd: install
-
-      - name: Build App
-        run: yarn build
+          cmd: install # will run `yarn install` command
+      - uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: build # will run
 
       - name: Install Surge
         run: npm install --global surge
