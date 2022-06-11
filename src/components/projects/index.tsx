@@ -1,6 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
-import { Item } from "./subComponents/Item";
 import { ProjectCard } from "./subComponents/ProjectCard";
 import React from "react";
 import { infor } from "../../data/data";
@@ -23,14 +22,12 @@ export const Portfolio = () => {
 
 const CardDeck = () => {
   return (
-    <div style={{ width: "100%" }}>
-      <Box sx={{ display: "grid", gridTemplateColumns: `repeat(3, 1fr)` }}>
-        {infor.projects.map((project) => (
-          <Item key={`key-${v4()}`}>
-            <ProjectCard {...project} />
-          </Item>
-        ))}
-      </Box>
+    <div className="row">
+      {infor.projects.map((project) => (
+        <div className="col-sm-12 col-lg-4 my-2" key={`key-${v4()}`}>
+          <ProjectCard {...project} />
+        </div>
+      ))}
     </div>
   );
 };

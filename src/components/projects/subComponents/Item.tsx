@@ -1,11 +1,12 @@
-import { Box, BoxProps } from "@mui/material";
+import { Box, BoxProps, Grid, GridProps } from "@mui/material";
 
 import React from "react";
 
-export const Item = (props: BoxProps) => {
+export const Item = (props: GridProps) => {
   const { sx, ...other } = props;
   return (
-    <Box
+    <Grid
+      item
       sx={{
         bgcolor: "transparent",
         p: 1,
