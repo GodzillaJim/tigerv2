@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 
-import { ProjectCard } from "./subComponents/ProjectCard";
+import FullwidthCard from "./subComponents/FullwidthCard";
 import React from "react";
 import { infor } from "../../data/data";
 import { v4 } from "uuid";
@@ -22,12 +22,12 @@ export const Portfolio = () => {
 
 const CardDeck = () => {
   return (
-    <div className="row">
-      {infor.projects.map((project) => (
-        <div className="col-sm-12 col-lg-4 my-2" key={`key-${v4()}`}>
-          <ProjectCard {...project} />
-        </div>
+    <Grid spacing={3} container direction="column">
+      {infor.projects.map((project, index) => (
+        <Grid item key={`key-${v4()}`}>
+          <FullwidthCard even={index % 2 === 0} project={project} />
+        </Grid>
       ))}
-    </div>
+    </Grid>
   );
 };
