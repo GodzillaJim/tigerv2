@@ -14,26 +14,52 @@ interface IProject {
 }
 const FullwidthCard = (props: IProject) => {
   const {
-    project: { image, imageAttribute },
+    project: { image, imageAttribution },
     even,
   } = props;
+  const height = 500;
+  const imageHeight = 350;
+  const imageWidth = 400;
+
   return (
     <Grid className="fullwidth-root" container>
       <Grid sx={{ width: "100%" }} item>
         <Card>
           <Grid columns={2} container direction="row">
             <Grid item xs={2} sm={1} md={1} lg={1} xl={1}>
-              {even && <CardMedia className="background-image-contain" image={image} sx={{ height: 600 }} />}
-              {!even && <TextPane {...props.project} />}
+              <Grid height="100%" container direction="column" justifyContent="center" alignItems="center">
+                <Grid item>
+                  {even && (
+                    <CardMedia
+                      className="background-image-contain"
+                      image={image}
+                      sx={{ height: imageHeight, width: imageWidth }}
+                    />
+                  )}
+                  {!even && <TextPane project={props.project} height={height} />}
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item columns={1} xs={2} sm={1} md={1} lg={1} xl={1}>
-              {!even && <CardMedia className="background-image-contain" image={image} sx={{ height: 600 }} />}
-              {even && <TextPane {...props.project} />}
+              <Grid height="100%" container direction="column" justifyContent="center" alignItems="center">
+                <Grid item>
+                  {!even && (
+                    <CardMedia
+                      className="background-image-contain"
+                      image={image}
+                      sx={{ height: imageHeight, width: imageWidth }}
+                    />
+                  )}
+                  {even && <TextPane project={props.project} height={height} />}
+                </Grid>
+              </Grid>
             </Grid>
-            {imageAttribute && (
+            {imageAttribution && (
               <Grid item>
-                <LinkContainer variant="caption" href={imageAttribute.link}>
-                  {imageAttribute.text}
+                <LinkContainer variant="caption" href={imageAttribution.link}>
+                  <Typography fontSize="0.6rem" color="primary">
+                    {imageAttribution.text}
+                  </Typography>
                 </LinkContainer>
               </Grid>
             )}
@@ -44,14 +70,22 @@ const FullwidthCard = (props: IProject) => {
   );
 };
 
-const TextPane = (props: Project) => {
-  const { name, stack, summary, github, site } = props;
+const TextPane = ({ project, height }: { project: Project; height: number }) => {
+  const { name, stack, summary, github, site } = project;
   const handleReadMore = () => {
     setModalIsOpen(!modalIsOpen);
   };
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   return (
-    <Grid spacing={1} padding={2} justifyContent="center" container direction="column">
+    <Grid
+      height={height}
+      spacing={1}
+      padding={3}
+      justifyContent="center"
+      alignItems="center"
+      container
+      direction="column"
+    >
       <Grid item>
         <Typography textAlign={"center"} fontFamily={"san serif"} variant="h6">
           {name.toUpperCase()}
@@ -68,8 +102,8 @@ const TextPane = (props: Project) => {
           ))}
         </Grid>
       </Grid>
-      <Grid sx={{ maxHeight: 450, height: 450, overflow: "hidden", paddingY: "auto" }} item>
-        {summary.substring(0, 200) + "..."}
+      <Grid sx={{ overflow: "hidden" }} item>
+        {summary.substring(0, 300) + "..."}
       </Grid>
       <Grid item>
         <Grid justifyContent={"space-evenly"} container direction="row">
@@ -84,7 +118,7 @@ const TextPane = (props: Project) => {
             </Button>
           </Grid>
           <Grid item>
-            <CustomModal open={modalIsOpen} project={{ ...props }} handleClose={() => setModalIsOpen(!modalIsOpen)} />
+            <CustomModal open={modalIsOpen} project={{ ...project }} handleClose={() => setModalIsOpen(!modalIsOpen)} />
             <Button onClick={handleReadMore}>Read More</Button>
           </Grid>
         </Grid>

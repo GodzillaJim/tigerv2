@@ -45,21 +45,29 @@ export const infor = {
     },
     {
       name: "SpurSoft Online Software Shop",
-      image: "/images/projects/spursoft.png",
+      image: "/images/projects/spursoftv3.png",
       stack: ["MongoDB", "NodeJS", "ExpressJS", "ReactJS", "Redux"],
       summary:
         "I completed this project to fulfill the requirements of INF 470E Software Engineering course. This online store mimics other online retailers but is customized to sellSoftware only on one-time purchase or on license terms. A registered user selects software, checks out and links to each product are generated and sent to an email address provided during checkout. These links point to a folder containing the software, activation keys or licenses. This process is automated.",
       github: "https://github.com/godzillajim/spursoft",
       site: "https://spursoft.herokuapp.com/",
+      imageAttribution: {
+        link: "http://www.freepik.com",
+        text: "Designed by studiogstock / Freepik",
+      },
     },
     {
       name: "Pigeon",
-      image: "/images/projects/pigeon.png",
+      image: "/images/projects/pigeonv1.png",
       stack: ["NodeJS", "ExpressJS", "ReactJS", "Redux"],
       summary:
         "A simple Bible reading application for accessing the King James Version. Read your Bible and pray everyday if you want to grow.",
       github: "https://github.com/godzillajim/pigeon",
       site: "https://pigeon-bible.herokuapp.com/",
+      imageAttribution: {
+        link: "https://www.freepik.com/vectors/cartoon-set",
+        text: "Cartoon set vector created by macrovector - www.freepik.com",
+      },
     },
   ],
 };

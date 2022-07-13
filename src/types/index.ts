@@ -5,7 +5,7 @@ export type Project = {
   summary: string;
   github: string;
   site: string;
-  imageAttribute?: {
+  imageAttribution?: {
     link: string;
     text: string;
   };
