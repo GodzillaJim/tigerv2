@@ -31,8 +31,12 @@ export const infor = {
   ],
   projects: [
     {
-      name: "SignSay - Sign Language Recognition App",
-      image: "/images/projects/signsay.png",
+      name: "SignSay",
+      image: "/images/projects/signsayv2.png",
+      imageAttribution: {
+        link: "https://www.vecteezy.com/free-vector/sign-language",
+        text: "Sign Language Vectors by Vecteezy",
+      },
       stack: ["Python", "PyTorch", "Keras", "Tensorflow"],
       summary:
         "This project was completed in partial fulfillment of the BSc. in Informatics. This application aims to facilitate communication between the deaf and hearing-impaired whose first language is sign language and the rest of the community. The hard of hearing have trouble interacting with people in informal settings such as at a coffee shop because few people in the community understand sign language. In addition, the high number of people who do not understand sign language limits how often the hearing impaired can air their views even when the subject at hand is of significant concern. This project develops SignSay, which bridges this communication gap by translating sign language into English text in real-time, allowing signers to interact with non-signers. SignSay applies computer vision to capture BSL gestures and machine learning to associate the gestures with their meaning in textual format. SignSay will increase the hearing impaired involvement in communities and improve their social interaction by bridging the communication gap between signers and no-signers.",
