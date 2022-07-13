@@ -1,4 +1,6 @@
-import { Button, Card, CardMedia, Grid, Typography } from "@mui/material";
+import "./fullwidthcard.css";
+
+import { Button, Card, CardMedia, Grid, Link as LinkContainer, Typography } from "@mui/material";
 import { GitHub, Link } from "@mui/icons-material";
 import React, { useState } from "react";
 
@@ -12,7 +14,7 @@ interface IProject {
 }
 const FullwidthCard = (props: IProject) => {
   const {
-    project: { image },
+    project: { image, imageAttribute },
     even,
   } = props;
   return (
@@ -21,13 +23,20 @@ const FullwidthCard = (props: IProject) => {
         <Card>
           <Grid columns={2} container direction="row">
             <Grid item xs={2} sm={1} md={1} lg={1} xl={1}>
-              {even && <CardMedia image={image} sx={{ height: 600 }} />}
+              {even && <CardMedia className="background-image-contain" image={image} sx={{ height: 600 }} />}
               {!even && <TextPane {...props.project} />}
             </Grid>
             <Grid item columns={1} xs={2} sm={1} md={1} lg={1} xl={1}>
-              {!even && <CardMedia image={image} sx={{ height: 600 }} />}
+              {!even && <CardMedia className="background-image-contain" image={image} sx={{ height: 600 }} />}
               {even && <TextPane {...props.project} />}
             </Grid>
+            {imageAttribute && (
+              <Grid item>
+                <LinkContainer variant="caption" href={imageAttribute.link}>
+                  {imageAttribute.text}
+                </LinkContainer>
+              </Grid>
+            )}
           </Grid>
         </Card>
       </Grid>
@@ -42,12 +51,14 @@ const TextPane = (props: Project) => {
   };
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   return (
-    <Grid spacing={1} padding={2} container direction="column">
+    <Grid spacing={1} padding={2} justifyContent="center" container direction="column">
       <Grid item>
-        <Typography variant="h6">{name.toUpperCase()}</Typography>
+        <Typography textAlign={"center"} fontFamily={"san serif"} variant="h6">
+          {name.toUpperCase()}
+        </Typography>
       </Grid>
       <Grid item>
-        <Grid container spacing={1} direction="row">
+        <Grid container justifyContent={"center"} spacing={1} direction="row">
           {stack.map((tech) => (
             <Grid key={v4()} item>
               <Typography color="#ef6e6e" variant="subtitle2">
@@ -57,8 +68,8 @@ const TextPane = (props: Project) => {
           ))}
         </Grid>
       </Grid>
-      <Grid sx={{ maxHeight: 450, height: 450, overflow: "hidden" }} item>
-        {summary}
+      <Grid sx={{ maxHeight: 450, height: 450, overflow: "hidden", paddingY: "auto" }} item>
+        {summary.substring(0, 200) + "..."}
       </Grid>
       <Grid item>
         <Grid justifyContent={"space-evenly"} container direction="row">
