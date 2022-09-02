@@ -10,8 +10,8 @@ import { SummaryPane } from "../components/summary";
 import { infor } from "../data/data";
 
 export const HomeScreen = () => {
-  const [summaryIsOpen, setSummaryIsOpen] = useState(true);
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [summaryIsOpen, setSummaryIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
   const summaryPaneSize = useMemo(() => {
     let temp = 0;
     if (summaryIsOpen) {
