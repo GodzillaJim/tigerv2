@@ -1,5 +1,18 @@
-import { Avatar, Button, Card, CardContent, Divider, Grid, Typography } from "@mui/material";
-import { ConnectWithoutContact, GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import {
+  Avatar,
+  Button,
+  Card,
+  CardContent,
+  Divider,
+  Grid,
+  Typography,
+} from "@mui/material";
+import {
+  ConnectWithoutContact,
+  GitHub,
+  LinkedIn,
+  Twitter,
+} from "@mui/icons-material";
 
 import LanguageRating from "./subComponents/LanguageRating";
 import React from "react";
@@ -40,7 +53,7 @@ export const SummaryPane = () => {
                   <Grid item>
                     <Avatar
                       sx={{ height: 100, width: 100 }}
-                      src={"/images/profile.jpg"}
+                      src={infor.profile}
                       alt="profile avatar"
                       aria-label="profile image"
                     />
@@ -71,10 +84,18 @@ export const SummaryPane = () => {
       <Grid item>
         <Card>
           <CardContent>
-            <Grid columns={infor.languages.length} container justifyContent={"space-evenly"} direction="row">
+            <Grid
+              columns={infor.languages.length}
+              container
+              justifyContent={"space-evenly"}
+              direction="row"
+            >
               {infor.languages.map((language) => (
                 <Grid columns={1} item key={v4()}>
-                  <LanguageRating value={language.level * 100} label={language.name} />
+                  <LanguageRating
+                    value={language.level * 100}
+                    label={language.name}
+                  />
                 </Grid>
               ))}
             </Grid>
@@ -105,8 +126,16 @@ export const SummaryPane = () => {
           <Grid sx={{ width: "100%" }} justifyContent="center" item>
             <Card>
               <CardContent sx={{ display: "flex", justifyContent: "center" }}>
-                <Button sx={{ padding: "10px" }} onClick={handleDownloadResume} color="warning" variant="contained">
-                  <Typography className="text-dark text-center" variant="caption">
+                <Button
+                  sx={{ padding: "10px" }}
+                  onClick={handleDownloadResume}
+                  color="warning"
+                  variant="contained"
+                >
+                  <Typography
+                    className="text-dark text-center"
+                    variant="caption"
+                  >
                     Download CV
                   </Typography>
                 </Button>
@@ -124,7 +153,10 @@ export const SummaryPane = () => {
             <Grid container justifyContent="space-evenly">
               {infor.socialMedia.map((media) => (
                 <Grid item key={v4()}>
-                  <SocialMediaIcon icon={getSocialMediaIcon(media.name)} link={media.link} />
+                  <SocialMediaIcon
+                    icon={getSocialMediaIcon(media.name)}
+                    link={media.link}
+                  />
                 </Grid>
               ))}
             </Grid>

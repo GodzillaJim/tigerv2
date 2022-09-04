@@ -1,0 +1,6 @@
+.footer {
+    box-shadow: 0 -5px 5px 0 #1c1b1b;
+    -webkit-box-shadow: 0 -5px 5px 0 #1c1b1b;
+    -moz-box-shadow: 0 -5px 5px 0 #1c1b1b;
+    background-color: #303030;
+}

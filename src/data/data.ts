@@ -2,6 +2,7 @@ export const infor = {
   homePageTitle: "Jimna Njoroge | Software Engineer",
   name: "Jimna Njoroge",
   profession: "Fullstack Developer",
+  profile: "/images/profile.png",
   languages: [
     { name: "English", level: 1 },
     { name: "Swahili", level: 0.95 },
@@ -13,9 +14,13 @@ export const infor = {
     { name: "Spring", value: 0.75 },
     { name: "DevOps", value: 0.75 },
   ],
-  resume: "https://my-personal-stuff-on-aws-including-resume.s3.amazonaws.com/Jimna's+Resume+v1.0.0.pdf",
+  resume:
+    "https://my-personal-stuff-on-aws-including-resume.s3.amazonaws.com/Jimna's+Resume+v1.0.0.pdf",
   socialMedia: [
-    { name: "LinkedIn", link: "https://www.linkedin.com/in/jimna-njoroge-4b5a4b178/" },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/jimna-njoroge-4b5a4b178/",
+    },
     { name: "GitHub", link: "https://github.com/godzillajim" },
     { name: "Twitter", link: "https://twitter.com/jimnam99" },
   ],
@@ -68,6 +73,23 @@ export const infor = {
         link: "https://www.freepik.com/vectors/cartoon-set",
         text: "Cartoon set vector created by macrovector - www.freepik.com",
       },
+    },
+  ],
+  whatTodo: [
+    {
+      title: "PROGRAMMER",
+      description:
+        "Developing an app and need a programmer in your team to write PHP or JS code, and it’s VanillaJS or ReactJS and some nodeJS? Or it’s a Java app with Spring Framework. I’m your guy.",
+    },
+    {
+      title: "DEVSECOPS",
+      description:
+        "Every developer’s nightmare. I know because I’ve done it countless times on AWS, Azure, Heroku,DigitalOcean, Google, you name it. Don’t second guess, when you can be certain",
+    },
+    {
+      title: "Data Management",
+      description:
+        "SQL or NoSQL? Is it on cloud or hosted locally? You want to create, manage, back-up or stream your data in real time? It doesn’t matter, you want your data available and in order, I can ensure that.",
     },
   ],
 };
