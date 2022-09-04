@@ -20,7 +20,7 @@ const SuccessMessage = () => {
         </Grid>
         <Grid item className={"text-center"}>
           <Typography variant={"h5"} textAlign={"center"}>
-            Thank you for reaching. I'll get back to you soon.
+            Thank you for reaching out. I'll get back to you soon.
           </Typography>
         </Grid>
       </Grid>

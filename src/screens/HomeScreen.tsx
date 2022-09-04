@@ -11,7 +11,6 @@ import { infor } from "../data/data";
 import Profession from "../components/Profession";
 import Partners from "../components/Partners";
 import Contact from "../components/contact";
-import Footer from "../components/common/Footer";
 
 export const HomeScreen = () => {
   const [summaryIsOpen, setSummaryIsOpen] = useState(false);
@@ -148,9 +147,6 @@ export const HomeScreen = () => {
               </Grid>
             )}
           </Grid>
-        </Grid>
-        <Grid item>
-          <Footer />
         </Grid>
       </Grid>
     </div>
