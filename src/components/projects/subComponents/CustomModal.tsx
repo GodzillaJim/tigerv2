@@ -1,6 +1,11 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { GitHub, Link } from "@mui/icons-material";
-import { MDBModal, MDBModalBody, MDBModalFooter, MDBModalHeader } from "mdbreact";
+import {
+  MDBModal,
+  MDBModalBody,
+  MDBModalFooter,
+  MDBModalHeader,
+} from "mdbreact";
 
 import { Project } from "../../../types";
 import React from "react";
@@ -27,7 +32,12 @@ const CustomModal = (props: ICustomModal) => {
         <MDBModalBody>
           <Grid spacing={2} container>
             <Grid item>
-              <img className="img-fluid" src={project.image} alt={project.name} />
+              <img
+                className="img-fluid"
+                src={project.image}
+                style={{ maxHeight: 270 }}
+                alt={project.name}
+              />
             </Grid>
             <Grid item>
               <Grid spacing={3} container direction="row">
@@ -48,7 +58,10 @@ const CustomModal = (props: ICustomModal) => {
         <MDBModalFooter>
           <Grid justifyContent={"space-evenly"} container direction="row">
             <Grid item>
-              <Button href={project.github} aria-label="redirect-to-github-page">
+              <Button
+                href={project.github}
+                aria-label="redirect-to-github-page"
+              >
                 <GitHub />
               </Button>
             </Grid>

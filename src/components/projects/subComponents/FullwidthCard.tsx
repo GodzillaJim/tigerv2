@@ -17,7 +17,7 @@ const FullwidthCard = (props: IProject) => {
     project: { image, imageAttribution },
     even,
   } = props;
-  const height = 500;
+  const height = 365;
   const imageHeight = 350;
   const imageWidth = 400;
 

@@ -8,6 +8,10 @@ import { Helmet } from "react-helmet";
 import { Portfolio } from "../components/projects";
 import { SummaryPane } from "../components/summary";
 import { infor } from "../data/data";
+import Profession from "../components/Profession";
+import Partners from "../components/Partners";
+import Contact from "../components/contact";
+import Footer from "../components/common/Footer";
 
 export const HomeScreen = () => {
   const [summaryIsOpen, setSummaryIsOpen] = useState(false);
@@ -60,7 +64,13 @@ export const HomeScreen = () => {
       <Helmet>
         <title>{infor.homePageTitle}</title>
       </Helmet>
-      <Grid padding={1} sx={{ backgroundColor: "#222" }} spacing={1} direction="column" container>
+      <Grid
+        padding={1}
+        sx={{ backgroundColor: "#222" }}
+        spacing={1}
+        direction="column"
+        container
+      >
         <Grid item>
           <CustomNavbar
             menuIsOpen={menuIsOpen}
@@ -70,7 +80,14 @@ export const HomeScreen = () => {
           />
         </Grid>
         <Grid id="contentStart" sx={{ mt: 7 }} item>
-          <Grid spacing={1} bgcolor={"transparent"} container direction="row" columns={12} justifyContent="center">
+          <Grid
+            spacing={1}
+            bgcolor={"transparent"}
+            container
+            direction="row"
+            columns={12}
+            justifyContent="center"
+          >
             {summaryIsOpen && (
               <Grid
                 style={{ backgroundColor: "transparent" }}
@@ -102,6 +119,15 @@ export const HomeScreen = () => {
                 <Grid item>
                   <Portfolio />
                 </Grid>
+                <Grid item>
+                  <Profession />
+                </Grid>
+                <Grid item>
+                  <Partners />
+                </Grid>
+                <Grid item>
+                  <Contact />
+                </Grid>
               </Grid>
             </Grid>
 
@@ -122,6 +148,9 @@ export const HomeScreen = () => {
               </Grid>
             )}
           </Grid>
+        </Grid>
+        <Grid item>
+          <Footer />
         </Grid>
       </Grid>
     </div>
